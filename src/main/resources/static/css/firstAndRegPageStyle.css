@@ -1,9 +1,6 @@
 /* Общие стили */
 body {
     font-family: Arial, sans-serif;
-    background-image: url("../images/Z-pic.jpg"); /* Указываем путь к изображению */
-    background-size: 75%; /* Масштабируем изображение для покрытия всей области */
-    background-position: center; /* Центрируем изображение */
     margin: 0;
     padding: 0;
     display: flex;
