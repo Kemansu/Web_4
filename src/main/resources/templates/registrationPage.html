@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Page</title>
+    <link rel="stylesheet" th:href="@{/css/firstAndRegPageStyle.css}">
+</head>
+<body>
+<h2 id="formTitle">Z-Регистрация</h2>
+<header>Погосов Денис Артурович P3220 Вариант 5432</header>
+<!-- Форма для отправки данных -->
+<form id="authForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required />
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required />
+    <br>
+    <input type="submit" value="Register" />
+</form>
+
+<!-- Ссылки для переключения -->
+<a href="/SpringApp/firstPage">Я уже на СВО</a>
+
+<!-- Элемент для отображения сообщения -->
+<p id="responseMessage" style="color: red;"></p>
+
+<script>
+    // Получаем форму и элемент для сообщений
+    const form = document.getElementById('authForm');
+    const responseMessage = document.getElementById('responseMessage');
+
+    // Обрабатываем отправку формы
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault(); // Предотвращаем стандартное поведение формы
+
+        // Получаем данные из формы
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+
+            // Отправляем запрос через fetch
+            fetch('/api/new-user', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data), // Преобразуем данные в JSON
+            }).then(response => {
+                if (!response.ok) {
+                    // Ошибка
+                    responseMessage.style.color = 'red';
+                    response.json().then(data => {responseMessage.textContent = data.message;});
+                } else {
+                    // Успешный ответ
+                    responseMessage.style.color = 'green';
+                    response.text().then(text => responseMessage.textContent = text);
+                    // Очистить форму после успешной регистрации
+                    form.reset();
+                }
+            }).catch(error => {
+                    // Обработка ошибки сети
+                    responseMessage.style.color = 'red';
+                    responseMessage.textContent = 'Произошла ошибка при отправке данных. Проверьте соединение.';
+                    console.error('Error:', error);
+                });
+
+    });
+</script>
+</body>
+</html>

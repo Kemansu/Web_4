@@ -1,0 +1,170 @@
+/* Общие стили */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("../images/Z-pic.jpg"); /* Указываем путь к изображению */
+    background-size: 75%; /* Масштабируем изображение для покрытия всей области */
+    background-position: center; /* Центрируем изображение */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Явное оформление header */
+header {
+    font-family: fantasy, cursive;
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    background-color: purple;
+    color: white;
+    top: 0;
+    width: 100%;
+    position: fixed;
+}
+
+/* Заголовок */
+h2 {
+    font-size: 2rem;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Форма */
+form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px 30px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Поля ввода */
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* Полная ширина */
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc; /* Светлая рамка */
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Кнопка отправки */
+input[type="submit"] {
+    background-color: #4CAF50; /* Зелёный фон */
+    color: white;
+    font-size: 1.1rem;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Лёгкая тень */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+    transform: scale(1.05); /* Увеличение при наведении */
+}
+
+/* Ссылки */
+a {
+    display: inline-block;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1rem;
+    color: #007BFF; /* Ярко-синий цвет */
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3; /* Тёмно-синий при наведении */
+    text-decoration: underline;
+}
+
+/* Сообщения */
+p {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+p[style*="color: red;"] {
+    color: #e74c3c; /* Красный для ошибок */
+}
+
+p[style*="color: green;"] {
+    color: #27ae60; /* Зелёный для успеха */
+}
+/* Десктопный - от 1030 пикселей */
+@media (min-width: 1030px) {
+    header {
+        font-size: 60px;
+    }
+
+    form {
+        max-width: 500px;
+    }
+
+    input[type="submit"] {
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+}
+
+/* Планшетный - от 882 до 1030 пикселей */
+@media (min-width: 882px) and (max-width: 1029px) {
+    header {
+        font-size: 50px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    form {
+        padding: 15px 20px;
+        max-width: 400px;
+    }
+
+    input[type="submit"] {
+        font-size: 1rem;
+    }
+}
+
+/* Мобильный - меньше 882 пикселей */
+@media (max-width: 881px) {
+    header {
+        font-size: 40px;
+        padding: 10px 0;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        padding: 10px 15px;
+        max-width: 100%;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="submit"] {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    a {
+        font-size: 0.9rem;
+    }
+}

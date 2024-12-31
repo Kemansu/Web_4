@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>First Page</title>
+    <link rel="stylesheet" th:href="@{/css/firstAndRegPageStyle.css}">
+</head>
+<body>
+<header>Погосов Денис Артурович P3220 Вариант 5432</header>
+<h2 id="formTitle">Z-Аутентификация</h2>
+<form id="authForm" th:action="@{/login}" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required />
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required />
+    <br>
+    <input type="submit" value="Login" />
+</form>
+
+<!-- Ссылки для переключения -->
+<a href="/SpringApp/registrationPage">Я новенький Z-воин</a>
+
+<!-- Сообщения об ошибке или успехе -->
+<p th:if="${param.error}" style="color: red;">Неправильный логин или пароль</p>
+</body>
+</html>

@@ -1,0 +1,191 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+}
+
+form {
+    margin: 20px auto;
+    padding: 20px;
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    background-color: #f4f4f9;
+    font-weight: bold;
+}
+
+.logout-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: bold;
+}
+
+.logout-link:hover {
+    color: #0056b3;
+}
+
+/* Сообщения */
+p {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+#pagination_controls button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#pagination_controls button:hover {
+    background-color: #45a049;
+}
+
+#pagination_controls {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+#pagination_controls button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Десктопный - ширина экрана 1030px и выше */
+@media (min-width: 1030px) {
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    form {
+        max-width: 500px;
+    }
+
+    input[type="submit"] {
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+
+    #plot {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+/* Планшетный - ширина экрана от 882px до 1029px */
+@media (min-width: 882px) and (max-width: 1029px) {
+    h2 {
+        font-size: 2rem;
+    }
+
+    form {
+        max-width: 400px;
+        padding: 15px 20px;
+    }
+
+    input[type="submit"] {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    #plot {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+/* Мобильный - ширина экрана до 881px */
+@media (max-width: 881px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    form {
+        max-width: 100%;
+        padding: 10px 15px;
+    }
+
+    input,
+    select {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    input[type="submit"] {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    table th,
+    table td {
+        font-size: 0.8rem;
+        padding: 5px;
+    }
+
+    #plot {
+        width: 250px;
+        height: 250px;
+    }
+}
